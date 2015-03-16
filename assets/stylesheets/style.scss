@@ -81,8 +81,20 @@ $action-remove: #d9534f;
         }
     }
     @media screen and (max-width: $break-xsmall) {
-      width:100%;
+      width:98%;
       margin:10px 0 0 0;
+        
+      &.first{
+        margin-left: 1%;
+        margin-right: 1%;
+      }
+
+      &.second{
+        margin-left: 1%;
+        margin-right: 1%;
+      }
+
+     
     }
 	}
 }
