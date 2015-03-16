@@ -1,34 +1,31 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div class="map group" id="map-canvas" style="background: #5cb85c; height: 100vh;">
-</div>
-<div class="fixedContainer">
+<div class="fixedContainer group">
 <h2> {{ title }} </h2>
-<div class="infoBox marginTop" style="background: #ccc;">
-	<h3>Hotels</h3>
+<div class="infoBox marginTop">
+	<h3 class="select-heading">Hotels</h3>
 <select class="form-control">
   	{% for hotel in all_hotels %}
    		<option value='{{ hotel.name }}'>{{ hotel.name }}</option>
    	{% endfor %}
 </select>
-	<h3>Restaurants</h3>
+	<h3 class="select-heading">Restaurants</h3>
 <select class="form-control">
   	{% for restaurant in all_restaurants %}
    		<option value='{{ restaurant.name }}'>{{ restaurant.name }}</option>
    	{% endfor %}
 </select>
-	<h3>Things To Do</h3>
+	<h3 class="select-heading">Things To Do</h3>
 <select class="form-control">
   	{% for thing in all_things_to_do %}
    		<option value='{{ thing.name }}'>{{ thing.name }}</option>
    	{% endfor %}
 </select>
-<br />
-<a href= "/" class="btn btn-primary">Save</a>
+<a href= "/" class="btn btn-primary btn-noRadius">Save</a>
 </div>
 
-<div class="infoBox marginTop" style="background: #ccc;">
+<div class="infoBox marginTop noPadding">
 	<div class="panel panel-default">
 	  <!-- Default panel contents -->
 	  <div class="panel-heading">
@@ -39,25 +36,32 @@
 		</div>
 	  </div>
 
-	  <!-- List group -->
+    <!-- List group -->
+    <div class="list-panel">
 	  <div class="list-heading">My Hotel</div>
 	  <ul class="list-group">
-	    <li class="list-group-item">Cras justo odio</li>
-	    <li class="list-group-item">Cras justo odio</li>
-	  </ul>
+      <li class="list-group-item">Cras justo odio<a href="/"><span class="glyphicon glyphicon-remove item-action"></span></a></li>
+      <li class="list-group-item">Cras justo odio<a href="/"><span class="glyphicon glyphicon-remove item-action"></span></a></li>
+    </ul>
 	  <div class="list-heading">My Restaurants</div>
 	  <ul class="list-group">
-	    <li class="list-group-item">Cras justo odio</li>
-	    <li class="list-group-item">Cras justo odio</li>
-	    <li class="list-group-item">Cras justo odio</li>
-	  </ul>
+      <li class="list-group-item">Cras justo odio<a href="/"><span class="glyphicon glyphicon-remove item-action"></span></a></li>
+      <li class="list-group-item">Cras justo odio<a href="/"><span class="glyphicon glyphicon-remove item-action"></span></a></li>
+      <li class="list-group-item">Cras justo odio<a href="/"><span class="glyphicon glyphicon-remove item-action"></span></a></li>
+
+    </ul>
 	  <div class="list-heading">My Things To Do</div>
 	  <ul class="list-group">
-	    <li class="list-group-item">Cras justo odio</li>
-	    <li class="list-group-item">Cras justo odio</li>
-	  </ul>
+      <li class="list-group-item">Cras justo odio<a href="/"><span class="glyphicon glyphicon-remove item-action"></span></a></li>
+      <li class="list-group-item">Cras justo odio<a href="/"><span class="glyphicon glyphicon-remove item-action"></span></a></li>
+      <li class="list-group-item">Cras justo odio<a href="/"><span class="glyphicon glyphicon-remove item-action"></span></a></li>
+      <li class="list-group-item">Cras justo odio<a href="/"><span class="glyphicon glyphicon-remove item-action"></span></a></li>
+    </ul>
+    </div>
 	</div>
 </div>
+</div>
+<div class="map group" id="map-canvas" style="background: #5cb85c; height: 100vh;">
 </div>
 
 

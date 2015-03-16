@@ -1,12 +1,20 @@
-body{}
+$break-xsmall: 420px;
+$break-small: 767px;
+$break-large: 1200px;
+
+// color
+$action-remove: #d9534f;
 
 .marginTop{
-	margin-top: 20px;
+	margin-top: 10px;
 }
+.group:before,
 .group:after {
   content: "";
   display: table;
-  clear: both;
+}
+.group:after{
+  clear:both;
 }
 
 .fixedContainer{
@@ -14,19 +22,86 @@ body{}
 	top: 50px;
 	right: 20px;
 	z-index:100;
-
+  
 	.infoBox{
+		background:#f5f5f5;
 		width: 300px;
 		padding: 10px;
+
+		&.noPadding{
+			padding:0;
+		}
+
+		.select-heading{
+			font-size:18px;
+			font-weight:400;
+			margin:10px 5px 5px 5px;
+		}
+
+		.btn-noRadius{
+			margin-top:10px;
+			border-radius:0;
+			top:10px;
+			right:0;
+			left:0;
+		}
+		@media screen and (max-width: $break-small) {
+    		width:45%;
+        float:left;
+        margin-left: 10px;
+        margin-right: 10px;
+        height:270px;
+
+        .panel{
+          height: 100%;
+          margin-bottom: 0;
+        }
+    }
+    @media screen and (max-width: $break-xsmall) {
+      width:100%;
+      margin:10px 0 0 0;
+    }
 	}
+
+	@media screen and (max-width: $break-small) {
+    	position:relative;
+    	margin:30px 10px 10px 10px;
+    	top: 0;
+    	left:0;
+    	right:0;
+  	}
 }
 
 .panel{
-	height: 300px;
-	overflow:auto;
+	height: 400px;
 	.list-heading{
 		padding: 10px 15px;
 		font-size: 18px;
+	}
+  .list-panel{
+    overflow:auto;
+    height:350px;
+
+    @media screen and (max-width: $break-small) {
+      height:200px;
+    }
+  }
+	.list-group-item{
+		padding-top: 0px;
+		padding-bottom: 5px;
+		border:none;
+
+		.item-action{
+			float:right;
+      font-size:20px;
+			border-radius:50%;
+      &.glyphicon-remove{
+        color:$action-remove;;
+      }
+      &.glyphicon-remove:hover{
+        color: darken($action-remove, 10%);
+      }
+		}
 	}
 }
 .btn-group>.btn:last-child:not(:first-child), .btn-group>.dropdown-toggle:not(:first-child){
@@ -51,6 +126,10 @@ body{}
   		border-bottom-left-radius: 50%;
 		border-radius: 50%;
 		margin: 0 5px;
-		border: 1px solid #036;
+		border: 1px solid #39c;
+		&:hover{
+			background: #39c;
+			color:#fff;
+		}
 	}
 }

@@ -1,9 +1,11 @@
 .marginTop {
-  margin-top: 20px; }
+  margin-top: 10px; }
+
+.group:before, .group:after {
+  content: "";
+  display: table; }
 
 .group:after {
-  content: "";
-  display: table;
   clear: both; }
 
 .fixedContainer {
@@ -12,15 +14,66 @@
   right: 20px;
   z-index: 100; }
   .fixedContainer .infoBox {
+    background: #f5f5f5;
     width: 300px;
     padding: 10px; }
+    .fixedContainer .infoBox.noPadding {
+      padding: 0; }
+    .fixedContainer .infoBox .select-heading {
+      font-size: 18px;
+      font-weight: 400;
+      margin: 10px 5px 5px 5px; }
+    .fixedContainer .infoBox .btn-noRadius {
+      margin-top: 10px;
+      border-radius: 0;
+      top: 10px;
+      right: 0;
+      left: 0; }
+    @media screen and (max-width: 767px) {
+      .fixedContainer .infoBox {
+        width: 45%;
+        float: left;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 270px; }
+        .fixedContainer .infoBox .panel {
+          height: 100%;
+          margin-bottom: 0; } }
+    @media screen and (max-width: 420px) {
+      .fixedContainer .infoBox {
+        width: 100%;
+        margin: 10px 0 0 0; } }
+  @media screen and (max-width: 767px) {
+    .fixedContainer {
+      position: relative;
+      margin: 30px 10px 10px 10px;
+      top: 0;
+      left: 0;
+      right: 0; } }
 
 .panel {
-  height: 300px;
-  overflow: auto; }
+  height: 400px; }
   .panel .list-heading {
     padding: 10px 15px;
     font-size: 18px; }
+  .panel .list-panel {
+    overflow: auto;
+    height: 350px; }
+    @media screen and (max-width: 767px) {
+      .panel .list-panel {
+        height: 200px; } }
+  .panel .list-group-item {
+    padding-top: 0px;
+    padding-bottom: 5px;
+    border: none; }
+    .panel .list-group-item .item-action {
+      float: right;
+      font-size: 20px;
+      border-radius: 50%; }
+      .panel .list-group-item .item-action.glyphicon-remove {
+        color: #d9534f; }
+      .panel .list-group-item .item-action.glyphicon-remove:hover {
+        color: #c9302c; }
 
 .btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) {
   border-top-left-radius: 50%;
@@ -41,4 +94,7 @@
   border-bottom-left-radius: 50%;
   border-radius: 50%;
   margin: 0 5px;
-  border: 1px solid #036; }
+  border: 1px solid #39c; }
+  .btn-group .btn-circle:hover {
+    background: #39c;
+    color: #fff; }
